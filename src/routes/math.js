@@ -11,7 +11,7 @@ router.get('/:expression/:presicion', (req,res)=>{
         //function call to solve square root on math expression
         var result = square_root_function(string_expression,string_presicion);
         //function call to get significant numbers
-        var significantNumbers = cifras_cignificativas_raiz(result, string_presicion);
+        var significantNumbers = get_significantDigits(result, string_presicion);
         //send response to the client
        res.send("El resultao es " + result + " --- Cifras significativas: " + significantNumbers);
       
@@ -25,7 +25,7 @@ router.get('/:expression/:presicion', (req,res)=>{
           var cantidad_digitos = '';
           console.log("Resultado final: " + resultado_final);
           //function call to get significant numbers
-          cantidad_digitos = cifras_cignificativas_raiz(cadena_resultado,string_presicion);
+          cantidad_digitos = get_significantDigits(cadena_resultado,string_presicion);
           //send response to the client
           res.send('Resultado de la expresion ' + resultado_final + ' --- Cifras significativas: ' + cantidad_digitos);
       }
@@ -44,7 +44,7 @@ router.post('/', (req,res)=>{
     //square root validation on string
     if (cadena.indexOf('s')!=-1) {
       var result = square_root_function(cadena,cifra_cignificativa);
-      var cifras_significativas_raiz = cifras_cignificativas_raiz(result, cifra_cignificativa);
+      var cifras_significativas_raiz = get_significantDigits(result, cifra_cignificativa);
      res.send("El resultao es " + result + " --- Cifras significativas: " + cifras_significativas_raiz);
     
     }
@@ -55,7 +55,7 @@ router.post('/', (req,res)=>{
         var cantidad_digitos = '';
         console.log("Resultado final: " + resultado_final);
         //function call to get significant numbers
-        cantidad_digitos = cifras_cignificativas_raiz(cadena_resultado,cifra_cignificativa);
+        cantidad_digitos = get_significantDigits(cadena_resultado,cifra_cignificativa);
 
         res.send('Resultado de la expresion ' + resultado_final + ' --- Cifras significativas: ' + cantidad_digitos);
     }
@@ -109,7 +109,7 @@ function final(valor_cadena) {
 }
 
 //function to get the significant digits of the result
-function cifras_cignificativas_raiz (valor_cadena_final,cifra_cignificativa) {
+function get_significantDigits (valor_cadena_final,cifra_cignificativa) {
 
      var cadena_valor = (new String(valor_cadena_final)).valueOf();
      var result = "";
@@ -152,17 +152,23 @@ function cifras_cignificativas_raiz (valor_cadena_final,cifra_cignificativa) {
     }
     else{
        var string_value = 0;
-       string_value = Number.isInteger(cadena_valor);
+       string_value = parseFloat(cadena_valor);
        console.log(string_value);
-        if(string_value>=1&&math.isInteger(string_value)){
+        if(string_value>=1&&Number.isInteger(string_value)){
         var digito1 = cadena_valor.substring(0,eval(cifra_cignificativa));
         console.log("Valores significativos: " + digito1);
 
         return digito1;
         }
+        else if(!Number.isInteger(string_value)&&string_value>1000) {
+            var digito = cadena_valor.substring(0,eval(cifra_cignificativa));
+        console.log("Valores significativossss: " + digito);
+
+        return digito;
+        }
         else {
             var digito = cadena_valor.substring(0,eval(cifra_cignificativa+"+1"));
-        console.log("Valores significativos: " + digito);
+        console.log("Valores significativossss222: " + digito);
 
         return digito;
         }

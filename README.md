@@ -12,7 +12,7 @@ GET as the method be use like this format:
 
 Local: http://localhost:port/api/math/mathExpression/precisionValue
 
-Remote: 
+Remote: https://math-web-services.rj.r.appspot.com/api/math/mathExpression/precisionValue
 
 POST as the method be use like this format:
 

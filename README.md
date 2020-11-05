@@ -1,6 +1,6 @@
 # Introduction
 
-math-web-servises is a RESTful API to solve the math expression and find the significant digits of the expression result.
+math-web-services is a RESTful API to solve the math expression and find the significant digits of the expression result.
 
 ## Use Cases
 

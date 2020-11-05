@@ -8,7 +8,7 @@ This API could be used like a calculator.
 
 ## Methods 
 
-GET as the method be use like this format: 
+>GET as the method be use like this format: 
 
 Local: http://localhost:port/api/math/mathExpression/precisionValue
 

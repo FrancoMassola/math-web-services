@@ -14,9 +14,9 @@ Local: http://localhost:port/api/math/mathExpression/precisionValue
 
 Remote: https://math-web-services.rj.r.appspot.com/api/math/mathExpression/precisionValue
 
-example: https://math-web-services.rj.r.appspot.com/api/math/2+(51*81)-12/2
+-example: https://math-web-services.rj.r.appspot.com/api/math/2+(51*81)-12/2
 
-POST as the method be use like this format:
+>POST as the method be use like this format:
 
 {
 
@@ -26,7 +26,7 @@ POST as the method be use like this format:
   
 }
 
-example: 
+-example: 
 
 {
 

@@ -26,4 +26,14 @@ POST as the method be use like this format:
   
 }
 
+example: 
+
+{
+
+  "expression": "2+(51*81)-12",
+ 
+  "precision": "2"
+  
+}
+
 

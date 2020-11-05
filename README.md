@@ -17,8 +17,11 @@ Remote:
 POST as the method be use like this format:
 
 {
+
   "expression": "mathExpression",
+ 
   "precision": "precisionValue"
+  
 }
 
 

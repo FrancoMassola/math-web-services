@@ -6,7 +6,7 @@ math-web-servises is a RESTful API to solve the math expression and find the sig
 
 This API could be used like a calculator.
 
-## Peticions
+## Methods 
 
 GET as the method be use like this format: 
 

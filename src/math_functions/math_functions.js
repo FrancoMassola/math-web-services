@@ -45,11 +45,11 @@
        result += string_resultValue.charAt(i) 
        result += "-" 
    } 
-    var digistArray = result.split("-");
+    var arrayDigits = result.split("-");
     var digitPosition = 0;
     var i = 0;   
    //get the position of the significant digits after the 0.
-    while(digistArray[i]=='0'||digistArray[i]=='.' ||digistArray[i] == '-0'){
+    while(arrayDigits[i]=='0'||arrayDigits[i]=='.' ||arrayDigits[i] == '-0'){
         digitPosition = i;
         i++;
     }
@@ -57,7 +57,7 @@
     var finalArray = [];
     //get array of the significat digits
     for(var j = digitPosition+1;j<=totalDigitResult;j++){
-       finalArray = finalArray.concat(digistArray[j]);
+       finalArray = finalArray.concat(arrayDigits[j]);
     }
    //return the array as a string
     return finalArray.join('');

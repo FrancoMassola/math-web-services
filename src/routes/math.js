@@ -37,7 +37,7 @@ router.get('/:expression/:presicion', (req,res)=>{
 //router POST
 router.post('/', (req,res)=>{
     console.log(req.body);
-    //require values from the request body
+    //require values from the requested body
     const {expression,presicion} = req.body;
     var stringExpression = (new String(expression)).valueOf();
     var sting_significantDigits = (new String(presicion)).valueOf();
@@ -49,7 +49,7 @@ router.post('/', (req,res)=>{
     
     }
     else{
-        //if the expression does not contain square root, ejecute math_expression_result function to get a expression result
+        //if the expression doesn't contain square root, ejecute math_expression_result function to get a expression result
         var finalResult = mathFunctionsMolude.math_expression_result(stringExpression);
         var stringMath_result = (new String(finalResult)).valueOf();
         var digits_notRoot_result = '';
